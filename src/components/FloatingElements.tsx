@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
-import { MessageCircle, X } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export const FloatingElements = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const [showIphone, setShowIphone] = useState(true);
-  const [showGoldBar, setShowGoldBar] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -25,56 +24,58 @@ export const FloatingElements = () => {
       </button>
 
       {/* Floating Promos Container */}
-      <div className="fixed bottom-12 md:bottom-10 left-6 z-50 flex flex-col-reverse gap-4 pointer-events-none">
-        <AnimatePresence mode="popLayout">
-          {/* iPhone Promo */}
-          {showIphone && (
-            <motion.div 
-              key="iphone"
-              layout
-              initial={{ opacity: 0, scale: 0.8, x: -50 }}
-              animate={{ opacity: 1, scale: 1, x: 0 }}
-              exit={{ opacity: 0, scale: 0.8, x: -50 }}
-              drag={isMobile}
-              dragMomentum={false}
-              whileDrag={{ scale: 1.1 }}
-              className="w-28 md:w-48 group cursor-pointer touch-none pointer-events-auto relative"
-            >
-              <button 
-                onClick={(e) => { e.stopPropagation(); setShowIphone(false); }}
-                className="absolute -top-2 -right-2 z-10 bg-white text-gray-800 rounded-full p-1 shadow-md hover:bg-gray-100 transition-colors"
-              >
-                <X size={16} />
-              </button>
-              <div className="relative">
-                <img src="https://illuminatelabs.space/asset/images/winbox_freeiphonepromax.png" alt="iPhone Promo" className="w-full drop-shadow-2xl group-hover:-translate-y-2 transition-transform" referrerPolicy="no-referrer" />
-              </div>
-            </motion.div>
-          )}
+      <div className="fixed bottom-12 md:bottom-10 left-6 z-50 flex flex-col-reverse gap-4 pointer-events-none items-center md:items-start">
+        {/* Gift Box Toggle */}
+        <motion.div 
+          layout
+          drag={!isOpen && isMobile}
+          dragMomentum={false}
+          whileDrag={{ scale: 1.1 }}
+          animate={isOpen ? { x: 0, y: 0 } : {}}
+          onClick={() => setIsOpen(!isOpen)}
+          className="w-28 md:w-48 cursor-pointer pointer-events-auto relative z-20 touch-none"
+        >
+          <div className="relative">
+            <img 
+              src={isOpen ? "https://illuminatelabs.space/asset/images/FreeGiftOpen.png" : "https://illuminatelabs.space/asset/images/FreeGiftClosed.png"} 
+              alt="Free Gift" 
+              className="w-full drop-shadow-2xl transition-transform hover:scale-105" 
+              referrerPolicy="no-referrer" 
+            />
+          </div>
+        </motion.div>
 
-          {/* Gold Bar Promo */}
-          {showGoldBar && (
-            <motion.div 
-              key="goldbar"
-              layout
-              initial={{ opacity: 0, scale: 0.8, x: -50 }}
-              animate={{ opacity: 1, scale: 1, x: 0 }}
-              exit={{ opacity: 0, scale: 0.8, x: -50 }}
-              drag={isMobile}
-              dragMomentum={false}
-              whileDrag={{ scale: 1.1 }}
-              className="w-28 md:w-48 group cursor-pointer touch-none pointer-events-auto relative"
-            >
-              <button 
-                onClick={(e) => { e.stopPropagation(); setShowGoldBar(false); }}
-                className="absolute -top-2 -right-2 z-10 bg-white text-gray-800 rounded-full p-1 shadow-md hover:bg-gray-100 transition-colors"
+        <AnimatePresence mode="popLayout">
+          {isOpen && (
+            <>
+              {/* iPhone Promo */}
+              <motion.div 
+                key="iphone"
+                layout
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.8, y: 20 }}
+                className="w-28 md:w-48 pointer-events-auto relative z-10"
               >
-                <X size={16} />
-              </button>
-              <div className="relative">
-                <img src="https://illuminatelabs.space/asset/images/winbox_floatingfreegoldbar.png" alt="Free Gold Bar" className="w-full drop-shadow-2xl group-hover:-translate-y-2 transition-transform" referrerPolicy="no-referrer" />
-              </div>
-            </motion.div>
+                <div className="relative">
+                  <img src="https://illuminatelabs.space/asset/images/winbox_freeiphonepromax.png" alt="iPhone Promo" className="w-full drop-shadow-2xl hover:-translate-y-2 transition-transform" referrerPolicy="no-referrer" />
+                </div>
+              </motion.div>
+
+              {/* Gold Bar Promo */}
+              <motion.div 
+                key="goldbar"
+                layout
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.8, y: 20 }}
+                className="w-28 md:w-48 pointer-events-auto relative z-10"
+              >
+                <div className="relative">
+                  <img src="https://illuminatelabs.space/asset/images/winbox_floatingfreegoldbar.png" alt="Free Gold Bar" className="w-full drop-shadow-2xl hover:-translate-y-2 transition-transform" referrerPolicy="no-referrer" />
+                </div>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
       </div>
