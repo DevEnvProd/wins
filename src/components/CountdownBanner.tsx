@@ -67,8 +67,8 @@ export const CountdownBanner = () => {
         animate={{ backgroundColor: 'transparent' }} // We use the gradient class instead
         className={`relative rounded-[2.5rem] p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between text-white overflow-hidden transition-all duration-1000 bg-gradient-to-br ${themes[currentTheme].gradient} shadow-2xl shadow-black/20`}
       >
-        <div className="flex items-center gap-8 z-10">
-          <div className="hidden md:block w-48 relative h-80">
+        <div className="flex flex-col md:flex-row items-center gap-8 z-10 text-center md:text-left">
+          <div className="w-32 h-48 md:w-48 md:h-80 relative shrink-0">
             <AnimatePresence mode="wait">
               <motion.img 
                 key={currentTheme}
@@ -87,36 +87,36 @@ export const CountdownBanner = () => {
             <motion.p 
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-sm font-bold uppercase tracking-[0.2em] opacity-80"
+              className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] opacity-80"
             >
               Daily Live Luckydraw Countdown
             </motion.p>
-            <h2 className={`${themes[currentTheme].colorName === 'Gold' ? 'text-4xl md:text-6xl' : 'text-5xl md:text-8xl'} font-black tracking-tighter leading-none`}>
+            <h2 className={`${themes[currentTheme].colorName === 'Gold' ? 'text-3xl md:text-6xl' : 'text-4xl md:text-8xl'} font-black tracking-tighter leading-none`}>
               {themes[currentTheme].colorName === 'Gold' ? (
                 <>100 GRAMS <br className="hidden md:block" /> GOLD PER DAY</>
               ) : (
                 <>1 DAY <br className="hidden md:block" /> 1 IPHONE</>
               )}
             </h2>
-            <p className="text-sm font-bold opacity-80 uppercase tracking-widest pt-2">
+            <p className="text-xs md:text-sm font-bold opacity-80 uppercase tracking-widest pt-2">
               Live Start At Every Night 9pm (GMT+8)
             </p>
           </div>
         </div>
         
-        <div className="flex flex-col items-center gap-8 z-10 mt-12 lg:mt-0">
-          <div className="flex gap-3">
+        <div className="flex flex-col items-center gap-8 z-10 mt-8 lg:mt-0 w-full lg:w-auto">
+          <div className="flex gap-2 md:gap-3 justify-center w-full">
             {timerChars.map((char, i) => (
-              <div key={i} className={char === ':' ? "text-5xl font-black flex items-center animate-pulse" : "bg-white/10 backdrop-blur-xl w-14 h-20 rounded-2xl flex items-center justify-center text-4xl font-black shadow-2xl border border-white/20"}>
+              <div key={i} className={char === ':' ? "text-2xl md:text-5xl font-black flex items-center animate-pulse" : "bg-white/10 backdrop-blur-xl w-8 h-12 md:w-14 md:h-20 rounded-lg md:rounded-2xl flex items-center justify-center text-xl md:text-4xl font-black shadow-2xl border border-white/20"}>
                 {char}
               </div>
             ))}
           </div>
-          <div className="flex flex-wrap justify-center gap-4">
-            <button className="bg-white/10 backdrop-blur-md hover:bg-white/20 border border-white/20 px-8 py-3 rounded-2xl font-black text-xs transition-all uppercase tracking-widest shadow-xl">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 w-full">
+            <button className="bg-white/10 backdrop-blur-md hover:bg-white/20 border border-white/20 px-6 py-3 rounded-2xl font-black text-[10px] md:text-xs transition-all uppercase tracking-widest shadow-xl w-full sm:w-auto">
               Previous Winner Record
             </button>
-            <button className="bg-white text-black px-10 py-3 rounded-2xl font-black text-xs hover:bg-gray-100 transition-all uppercase tracking-widest shadow-xl">
+            <button className="bg-white text-black px-6 py-3 rounded-2xl font-black text-[10px] md:text-xs hover:bg-gray-100 transition-all uppercase tracking-widest shadow-xl w-full sm:w-auto">
               How to get iPhone?
             </button>
           </div>
