@@ -88,12 +88,11 @@ export const Navbar = () => {
             <div className="flex items-center">
               <Link to="/" className="flex items-center gap-2">
                 <img 
-                  src="https://illuminatelabs.space/asset/images/winboxmy_logo.png" 
+                  src="https://illuminatelabs.space/asset/images/Winbox_MY_logo.avif" 
                   alt="Winbox 888" 
                   className="h-12 w-auto object-contain"
                   referrerPolicy="no-referrer"
                 />
-                <span className="hidden md:block text-2xl font-black tracking-tighter uppercase text-blue-gold-outline">Winbox 888</span>
               </Link>
             </div>
 

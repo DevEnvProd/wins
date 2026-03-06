@@ -44,7 +44,7 @@ const LandingPage = () => (
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-sky-100 selection:text-sky-600">
+      <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-sky-100 selection:text-sky-600 pt-32">
         <Navbar />
         <Routes>
           <Route path="/" element={<LandingPage />} />

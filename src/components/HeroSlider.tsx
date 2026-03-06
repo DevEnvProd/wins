@@ -6,16 +6,24 @@ export const HeroSlider = () => {
   
   const slides = [
     {
-      image: "https://illuminatelabs.space/asset/images/MainBanner0.png",
-      alt: "Slide 1"
+      image: "https://illuminatelabs.space/asset/images/HomeBanner_00.png",
+      alt: "Winbox Daily Live Lucky Draw"
     },
     {
-      image: "https://illuminatelabs.space/asset/images/MainBanner1.png",
-      alt: "Slide 2"
+      image: "https://illuminatelabs.space/asset/images/HomeBanner_01.jpg",
+      alt: "Winbox Trusted Partnership with Ez8"
     },
     {
-      image: "https://illuminatelabs.space/asset/images/MainBanner2.webp",
-      alt: "Slide 3"
+      image: "https://illuminatelabs.space/asset/images/HomeBanner_02.webp",
+      alt: "Winbox Free Turnover Bonus"
+    },
+    {
+      image: "https://illuminatelabs.space/asset/images/HomeBanner_03.webp",
+      alt: "Winbox Turnover Ranking Championship"
+    },
+    {
+      image: "https://illuminatelabs.space/asset/images/HomeBanner_04.webp",
+      alt: "Winbox Ambassador"
     }
   ];
 
@@ -45,7 +53,7 @@ export const HeroSlider = () => {
             <img 
               src={slide.image} 
               alt={slide.alt} 
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain md:object-cover"
               referrerPolicy="no-referrer"
             />
           </div>
