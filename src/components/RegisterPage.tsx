@@ -15,8 +15,8 @@ const REGISTER_URL = "https://h5.wbwin02.com/#/login/register?QXZhdGFySWQlM0QyOC
 
 export const RegisterPage = () => {
   return (
-    <div className="min-h-[calc(100vh-8rem)] bg-[#f8fbff] flex flex-col relative overflow-hidden -mt-10 md:mt-0">
-      <main className="flex-grow w-full h-[calc(100vh-5.5rem)] md:h-[calc(100vh-8rem)] relative z-10">
+    <div className="min-h-[calc(100vh-8rem)] bg-[#f8fbff] flex flex-col relative overflow-hidden pt-6">
+      <main className="flex-grow w-full h-[calc(100vh-9.5rem)] relative z-10">
         <iframe 
           src={REGISTER_URL}
           title="Winbox Register"
