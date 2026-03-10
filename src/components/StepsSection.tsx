@@ -39,7 +39,7 @@ export const StepsSection = () => {
   }, [steps.length]);
 
   return (
-    <div className="bg-white py-32 relative overflow-hidden">
+    <div className="bg-white py-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-20 space-y-4">
