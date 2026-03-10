@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { UserPlus, Download, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const StepsSection = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -58,48 +59,48 @@ export const StepsSection = () => {
           {/* Left Side: Step Navigation */}
           <div className="lg:col-span-5 space-y-6">
             {steps.map((s, i) => (
-              <motion.div 
-                key={i}
-                onClick={() => setActiveStep(i)}
-                className={`group cursor-pointer p-6 rounded-[2rem] border-2 transition-all duration-500 relative overflow-hidden ${
-                  activeStep === i 
-                    ? `border-transparent bg-gradient-to-r ${s.color} text-white shadow-2xl` 
-                    : 'border-gray-100 bg-gray-50 text-gray-400 hover:border-gray-200'
-                }`}
-              >
-                <div className="flex items-center gap-6 relative z-10">
-                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center font-black text-xl transition-colors ${
-                    activeStep === i ? 'bg-white/20' : 'bg-white shadow-sm text-gray-800'
-                  }`}>
-                    {s.id}
-                  </div>
-                  <div className="flex-grow">
-                    <h3 className={`text-xl font-black uppercase tracking-tight transition-colors ${
-                      activeStep === i ? 'text-white' : 'text-gray-800 group-hover:text-sky-500'
+              <Link to="/register" key={i} className="block">
+                <motion.div 
+                  className={`group cursor-pointer p-6 rounded-[2rem] border-2 transition-all duration-500 relative overflow-hidden ${
+                    activeStep === i 
+                      ? `border-transparent bg-gradient-to-r ${s.color} text-white shadow-2xl` 
+                      : 'border-gray-100 bg-gray-50 text-gray-400 hover:border-gray-200'
+                  }`}
+                >
+                  <div className="flex items-center gap-6 relative z-10">
+                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center font-black text-xl transition-colors ${
+                      activeStep === i ? 'bg-white/20' : 'bg-white shadow-sm text-gray-800'
                     }`}>
-                      {s.title}
-                    </h3>
+                      {s.id}
+                    </div>
+                    <div className="flex-grow">
+                      <h3 className={`text-xl font-black uppercase tracking-tight transition-colors ${
+                        activeStep === i ? 'text-white' : 'text-gray-800 group-hover:text-sky-500'
+                      }`}>
+                        {s.title}
+                      </h3>
+                    </div>
+                    {activeStep === i && (
+                      <motion.div 
+                        layoutId="arrow"
+                        className="hidden md:block"
+                      >
+                        <ChevronRight size={24} />
+                      </motion.div>
+                    )}
                   </div>
+                  
+                  {/* Progress Bar (Active Step Only) */}
                   {activeStep === i && (
                     <motion.div 
-                      layoutId="arrow"
-                      className="hidden md:block"
-                    >
-                      <ChevronRight size={24} />
-                    </motion.div>
+                      initial={{ width: 0 }}
+                      animate={{ width: "100%" }}
+                      transition={{ duration: 8, ease: "linear" }}
+                      className="absolute bottom-0 left-0 h-1 bg-white/30"
+                    />
                   )}
-                </div>
-                
-                {/* Progress Bar (Active Step Only) */}
-                {activeStep === i && (
-                  <motion.div 
-                    initial={{ width: 0 }}
-                    animate={{ width: "100%" }}
-                    transition={{ duration: 8, ease: "linear" }}
-                    className="absolute bottom-0 left-0 h-1 bg-white/30"
-                  />
-                )}
-              </motion.div>
+                </motion.div>
+              </Link>
             ))}
           </div>
 
@@ -124,9 +125,11 @@ export const StepsSection = () => {
                         {steps[activeStep].desc}
                       </p>
                     </div>
-                    <button className={`bg-gradient-to-r ${steps[activeStep].color} text-white px-8 py-3 rounded-full font-black text-xs uppercase tracking-widest shadow-xl hover:scale-105 transition-transform`}>
-                      {steps[activeStep].action}
-                    </button>
+                    <Link to="/register">
+                      <button className={`bg-gradient-to-r ${steps[activeStep].color} text-white px-8 py-3 rounded-full font-black text-xs uppercase tracking-widest shadow-xl hover:scale-105 transition-transform`}>
+                        {steps[activeStep].action}
+                      </button>
+                    </Link>
                   </div>
                   <div className="relative">
                     <div className="aspect-square rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white">

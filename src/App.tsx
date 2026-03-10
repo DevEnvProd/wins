@@ -38,7 +38,6 @@ const LandingPage = () => (
       <FAQSection />
     </main>
     <Footer />
-    <FloatingElements />
   </>
 );
 
@@ -54,6 +53,7 @@ export default function App() {
           <Route path="/partnership" element={<PartnershipPage />} />
           <Route path="/terms" element={<TermsAndConditionsPage />} />
         </Routes>
+        <FloatingElements />
       </div>
     </BrowserRouter>
   );

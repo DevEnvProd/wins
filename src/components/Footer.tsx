@@ -23,9 +23,14 @@ export const Footer = () => {
             <div className="space-y-4">
               <h4 className="text-2xl font-black uppercase tracking-widest mb-4 text-gold-outline">Contact Us</h4>
               <div className="flex gap-4">
-                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
+                <a 
+                  href="https://wa.me/601172359556" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer"
+                >
                   <MessageCircle size={20} />
-                </div>
+                </a>
                 <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
                   <Instagram size={20} />
                 </div>
