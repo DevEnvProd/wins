@@ -7,27 +7,39 @@ async function startServer() {
   const app = express();
   const PORT = 3000;
 
+  // Trust the first proxy (Cloud Run/Nginx)
+  app.set("trust proxy", 1);
+
   // Helper to get client IP
   const getClientIp = (req: express.Request) => {
     const forwarded = req.headers["x-forwarded-for"];
     if (forwarded) {
-      return typeof forwarded === "string" ? forwarded.split(",")[0] : forwarded[0];
+      const ip = typeof forwarded === "string" ? forwarded.split(",")[0].trim() : forwarded[0];
+      return ip;
     }
     return req.socket.remoteAddress;
   };
+
+  // Log every request for debugging
+  app.use((req, res, next) => {
+    const ip = getClientIp(req);
+    console.log(`[REQUEST] ${req.method} ${req.url} from IP: ${ip}`);
+    next();
+  });
 
   // Rate Limiting Middleware
   const limiter = rateLimit({
     windowMs: 60 * 1000, // 60 seconds
     max: 10, // Limit each IP to 10 requests per windowMs
-    standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
-    legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+    standardHeaders: true,
+    legacyHeaders: false,
     keyGenerator: (req) => {
-      return getClientIp(req) || "unknown";
+      const ip = getClientIp(req) || "unknown";
+      return ip;
     },
     handler: (req, res, next, options) => {
       const ip = getClientIp(req);
-      console.warn(`[RATE LIMIT] Excessive requests from IP: ${ip} at ${new Date().toISOString()}`);
+      console.warn(`[BLOCK] Rate limit exceeded for IP: ${ip} at ${new Date().toISOString()}`);
       res.status(options.statusCode).send(options.message);
     },
     message: "Too many requests from this IP, please try again after 60 seconds.",
