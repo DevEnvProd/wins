@@ -43,7 +43,7 @@ export const WhyUsSection = () => {
       <div className="max-w-7xl mx-auto px-4 relative">
         <div className="text-center mb-20 space-y-4">
           <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-gold-outline">
-            Why Winbox is Better
+            Why Winbox 666 is Better
           </h2>
           <p className="text-gray-400 font-bold uppercase tracking-widest text-xs">The ultimate gaming experience in Malaysia</p>
         </div>

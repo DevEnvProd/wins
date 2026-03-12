@@ -48,7 +48,7 @@ export const StepsSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-gold-outline"
+            className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-gold-outline"
           >
             How to Start Your Journey
           </motion.h2>

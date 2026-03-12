@@ -25,8 +25,16 @@ import { TermsAndConditionsPage } from './components/TermsAndConditionsPage';
 const LandingPage = () => (
   <>
     <main>
-      <h1 className="sr-only">Winbox - Daily Live Lucky Draw & Trusted Online Casino Platform</h1>
       <HeroSlider />
+      <div className="max-w-7xl mx-auto px-4 py-12 text-center">
+        <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tighter text-gold-outline mb-6 leading-none">
+          Winbox - The best online casino & gaming platform in Malaysia
+        </h1>
+        <p className="text-gray-500 font-black uppercase tracking-[0.3em] text-xs md:text-sm max-w-2xl mx-auto leading-relaxed">
+          Official Winbox Platform. Download iOS & Android APK to explore 
+          the best Slots, Live Casino & Sports Betting games today.
+        </p>
+      </div>
       <StepsSection />
       <CountdownBanner />
       <GamesSection />

@@ -12,11 +12,11 @@ export const FAQSection = () => {
   ];
 
   const faqs = [
-    { category: 'general', question: 'What is Winbox888?', answer: 'Winbox888 is a premier online casino platform in Malaysia, offering a wide range of games including slots, live casino, and sports betting with a focus on security and player experience.' },
-    { category: 'general', question: 'Is Winbox888 legal in Malaysia?', answer: 'Winbox888 operates under international gaming licenses from Gaming Curacao and PAGCOR, ensuring a regulated and fair gaming environment for all players.' },
+    { category: 'general', question: 'What is Winbox 666?', answer: 'Winbox 666 is a premier online casino platform in Malaysia, offering a wide range of games including slots, live casino, and sports betting with a focus on security and player experience.' },
+    { category: 'general', question: 'Is Winbox 666 legal in Malaysia?', answer: 'Winbox 666 operates under international gaming licenses from Gaming Curacao and PAGCOR, ensuring a regulated and fair gaming environment for all players.' },
     { category: 'general', question: 'How do I contact customer support?', answer: 'Our professional support team is available 24/7 via live chat, WhatsApp, and Telegram to assist you with any inquiries or technical issues.' },
     
-    { category: 'account', question: 'How do I create an account?', answer: 'Simply click the "Register" button, provide your basic details, and verify your phone number to start your journey with Winbox888.' },
+    { category: 'account', question: 'How do I create an account?', answer: 'Simply click the "Register" button, provide your basic details, and verify your phone number to start your journey with Winbox 666.' },
     { category: 'account', question: 'I forgot my password, what should I do?', answer: 'Click on the "Forgot Password" link on the login page to reset it via your registered email or phone number, or contact our 24/7 support.' },
     { category: 'account', question: 'Can I have more than one account?', answer: 'To ensure fair play and security, each player is permitted only one account. Multiple accounts may lead to suspension.' },
 
@@ -25,10 +25,10 @@ export const FAQSection = () => {
     { category: 'payment', question: 'Is there a minimum deposit amount?', answer: 'Yes, the minimum deposit is typically RM20, allowing players to start enjoying our games with a small initial commitment.' },
 
     { category: 'games', question: 'What types of games are available?', answer: 'We offer a massive selection including live dealer baccarat, roulette, thousands of slot titles, sportsbooks, horse racing, and 4D lottery.' },
-    { category: 'games', question: 'Can I play on my mobile phone?', answer: 'Absolutely! Winbox888 is fully optimized for mobile browsers, and we also offer a dedicated app for both iOS and Android devices.' },
+    { category: 'games', question: 'Can I play on my mobile phone?', answer: 'Absolutely! Winbox 666 is fully optimized for mobile browsers, and we also offer a dedicated app for both iOS and Android devices.' },
     { category: 'games', question: 'Are the games fair?', answer: 'Yes, all our games are provided by world-class developers and are regularly audited by independent labs like iTech Labs and GLI to ensure fairness.' },
 
-    { category: 'security', question: 'How does Winbox888 protect my data?', answer: 'We use advanced SSL encryption and security protocols from iovation and ThreatMetrix to ensure your personal and financial data remains private.' },
+    { category: 'security', question: 'How does Winbox 666 protect my data?', answer: 'We use advanced SSL encryption and security protocols from iovation and ThreatMetrix to ensure your personal and financial data remains private.' },
     { category: 'security', question: 'What is Gaming Curacao and PAGCOR?', answer: 'These are leading international regulatory bodies that license and oversee online gaming operations to ensure they meet strict standards of integrity.' },
     { category: 'security', question: 'Do you use RNG for your games?', answer: 'Yes, all our virtual games use certified Random Number Generators (RNG) to guarantee that every outcome is completely random and unbiased.' },
   ];
