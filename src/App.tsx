@@ -25,10 +25,12 @@ import { DownloadPage } from './components/DownloadPage';
 import { FAQPage } from './components/FAQPage';
 import { BlogPage } from './components/BlogPage';
 import { BlogPostPage } from './components/BlogPostPage';
+import { WorldCupBanner } from './components/WorldCupBanner';
 
 const LandingPage = () => (
   <>
     <main>
+      <WorldCupBanner />
       <HeroSlider />
       <div className="max-w-7xl mx-auto px-4 py-12 text-center">
         <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tighter text-gold-outline mb-6 leading-none">
