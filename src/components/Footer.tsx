@@ -171,7 +171,7 @@ export const Footer = () => {
             <Link to="/terms" className="hover:opacity-100">Terms & Conditions</Link>
           </div>
           <p className="text-xs opacity-40">
-            © 2026 winbox666.com | All Rights Reserved | Winbox
+            © 2026 winbox666.online | All Rights Reserved | Winbox
           </p>
         </div>
       </div>
