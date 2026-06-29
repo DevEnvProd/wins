@@ -21,6 +21,10 @@ import { LoginPage } from './components/LoginPage';
 import { RegisterPage } from './components/RegisterPage';
 import { PartnershipPage } from './components/PartnershipPage';
 import { TermsAndConditionsPage } from './components/TermsAndConditionsPage';
+import { DownloadPage } from './components/DownloadPage';
+import { FAQPage } from './components/FAQPage';
+import { BlogPage } from './components/BlogPage';
+import { BlogPostPage } from './components/BlogPostPage';
 
 const LandingPage = () => (
   <>
@@ -60,6 +64,10 @@ export default function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/partnership" element={<PartnershipPage />} />
           <Route path="/terms" element={<TermsAndConditionsPage />} />
+          <Route path="/download" element={<DownloadPage />} />
+          <Route path="/faq" element={<FAQPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
         </Routes>
         <FloatingElements />
       </div>

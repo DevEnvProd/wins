@@ -1,4 +1,5 @@
 import { MessageCircle, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return (
@@ -11,12 +12,12 @@ export const Footer = () => {
             <div className="space-y-6">
               <div className="text-2xl font-bold text-white flex items-center gap-2">
                 <div className="bg-white text-sky-900 p-1 rounded-md">W</div>
-                <span>Winbox888</span>
+                <span>Winbox</span>
               </div>
               <p className="text-sm leading-relaxed opacity-70">
-                Winbox888 is a premier licensed casino gaming platform dedicated to providing a world-class entertainment experience. 
+                Winbox is a premier licensed casino gaming platform dedicated to providing a world-class entertainment experience. 
                 As a fully regulated entity, we prioritize player security, fair play, and transparency across all our gaming offerings. 
-                Whether you enjoy slots, live dealer games, or sports betting, Winbox888 ensures a safe and rewarding environment for every enthusiast.
+                Whether you enjoy slots, live dealer games, or sports betting, Winbox ensures a safe and rewarding environment for every enthusiast.
               </p>
             </div>
             
@@ -161,21 +162,16 @@ export const Footer = () => {
         {/* Bottom Section: Copyright */}
         <div className="pt-12 border-t border-white/10 text-center space-y-4">
           <div className="flex flex-wrap justify-center gap-6 text-[10px] font-bold uppercase opacity-60">
-            <a href="#" className="hover:opacity-100">Promo</a>
-            <a href="#" className="hover:opacity-100">Winbox Partnership</a>
-            <a href="#" className="hover:opacity-100">Register</a>
-            <a href="#" className="hover:opacity-100">Login</a>
-            <a href="#" className="hover:opacity-100">Download</a>
-            <a href="#" className="hover:opacity-100">Game</a>
-            <a href="#" className="hover:opacity-100">Ambassador</a>
-            <a href="#" className="hover:opacity-100">Agent</a>
-            <a href="#" className="hover:opacity-100">4D Result</a>
-            <a href="#" className="hover:opacity-100">Help</a>
-            <a href="/terms" className="hover:opacity-100">Terms & Conditions</a>
-            <a href="#" className="hover:opacity-100">Contact Us</a>
+            <Link to="/" className="hover:opacity-100">Home</Link>
+            <Link to="/partnership" className="hover:opacity-100">Winbox Partnership</Link>
+            <Link to="/register" className="hover:opacity-100">Register</Link>
+            <Link to="/login" className="hover:opacity-100">Login</Link>
+            <Link to="/download" className="hover:opacity-100">Download</Link>
+            <Link to="/faq" className="hover:opacity-100">FAQ</Link>
+            <Link to="/terms" className="hover:opacity-100">Terms & Conditions</Link>
           </div>
           <p className="text-xs opacity-40">
-            © 2026 winbox88my4.com | All Rights Reserved | Winbox
+            © 2026 winbox666.com | All Rights Reserved | Winbox
           </p>
         </div>
       </div>

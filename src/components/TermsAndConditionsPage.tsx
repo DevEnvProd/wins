@@ -1,10 +1,16 @@
+import { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { FileText, Shield, Scale } from 'lucide-react';
+import { FileText, Shield, Scale, ArrowLeft, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Footer } from './Footer';
 
 export const TermsAndConditionsPage = () => {
+  useEffect(() => {
+    document.title = "Winbox Terms and Conditions - Official User Agreement & Regulations";
+  }, []);
+
   return (
-    <div className="min-h-screen bg-slate-50 pt-20">
+    <div className="min-h-screen bg-slate-50 pt-16">
       {/* Header */}
       <div className="bg-sky-900 text-white py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
@@ -14,27 +20,34 @@ export const TermsAndConditionsPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-4">Terms and Conditions</h1>
-            <p className="text-sky-200 text-lg max-w-2xl mx-auto">
-              Please read these terms carefully before using our services.
+            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-4 text-gold-outline">Terms and Conditions</h1>
+            <p className="text-sky-200 text-sm md:text-base max-w-2xl mx-auto font-medium">
+              Please read these terms and conditions carefully before participating in any games or services on Winbox.
             </p>
           </motion.div>
         </div>
       </div>
 
       {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 py-16">
+      <div className="max-w-4xl mx-auto px-4 py-12">
+        {/* Breadcrumbs */}
+        <div className="mb-8 text-xs text-slate-400 uppercase tracking-widest font-black flex items-center gap-2">
+          <Link to="/" className="hover:text-sky-500 transition-colors">Winbox</Link>
+          <span>&gt;</span>
+          <span className="text-slate-600">Terms and Conditions</span>
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="bg-white rounded-3xl shadow-xl p-8 md:p-12 space-y-12 text-slate-700 leading-relaxed"
+          className="bg-white rounded-3xl shadow-xl p-8 md:p-12 space-y-12 text-slate-700 leading-relaxed border border-slate-100"
         >
           {/* Introduction */}
           <div className="prose prose-slate max-w-none">
-            <p className="text-lg font-medium text-slate-900">
-              This page contains information explaining your rights in accessing and using Winbox Company website.
-              The Terms and Conditions relating to the games and promotions available on the Site are posted from time to time, which are incorporated herein by reference.
+            <p className="text-base md:text-lg font-medium text-slate-900">
+              This page contains information explaining your rights in accessing and using the official <Link to="/" className="text-sky-600 font-bold hover:underline">Winbox</Link> website.
+              The Terms and Conditions relating to the games and promotions available on the Site are updated periodically, which are incorporated herein by reference.
             </p>
           </div>
 
@@ -298,9 +311,51 @@ export const TermsAndConditionsPage = () => {
             </h2>
             <div className="space-y-4 pl-4 border-l-2 border-slate-100">
               <p><strong>14.1</strong> The English language version of this Agreement shall be the prevailing version in the event of any discrepancy between any translated versions of this Agreement.</p>
-              <p><strong>14.2</strong> This Agreement constitutes the entire understanding and agreement between Winbox and you regarding the Services and the Site and supersedes any prior agreement, understanding or arrangement.</p>
+              <p><strong>14.2</strong> This Agreement constitutes the entire understanding and agreement between <Link to="/" className="text-sky-600 font-bold hover:underline">Winbox</Link> and you regarding the Services and the Site and supersedes any prior agreement, understanding or arrangement.</p>
             </div>
           </section>
+
+          {/* Core Support SEO Quick-Links */}
+          <div className="mt-16 pt-10 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <Link 
+              to="/" 
+              className="bg-sky-50 hover:bg-sky-100 border border-sky-100 text-sky-900 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg hover:shadow-sky-100/30 transition-all group"
+            >
+              <div className="space-y-2">
+                <h4 className="font-black uppercase tracking-wider text-xs text-sky-700">Go to Homepage</h4>
+                <p className="text-xs text-slate-500 font-medium">Access official gaming lobbies & promotions.</p>
+              </div>
+              <div className="mt-4 flex items-center gap-1 font-black uppercase text-[10px] tracking-widest text-sky-600 group-hover:translate-x-1 transition-transform">
+                Winbox Home &rarr;
+              </div>
+            </Link>
+
+            <Link 
+              to="/login" 
+              className="bg-blue-50 hover:bg-blue-100 border border-blue-100 text-blue-900 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg hover:shadow-blue-100/30 transition-all group"
+            >
+              <div className="space-y-2">
+                <h4 className="font-black uppercase tracking-wider text-xs text-blue-700">Official Login Portal</h4>
+                <p className="text-xs text-slate-500 font-medium">Log into your existing Winbox account securely.</p>
+              </div>
+              <div className="mt-4 flex items-center gap-1 font-black uppercase text-[10px] tracking-widest text-blue-600 group-hover:translate-x-1 transition-transform">
+                Winbox Login &rarr;
+              </div>
+            </Link>
+
+            <Link 
+              to="/download" 
+              className="bg-emerald-50 hover:bg-emerald-150 border border-emerald-100 text-emerald-900 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg hover:shadow-emerald-100/35 transition-all group"
+            >
+              <div className="space-y-2">
+                <h4 className="font-black uppercase tracking-wider text-xs text-emerald-700">Download Mobile Apps</h4>
+                <p className="text-xs text-slate-500 font-medium">Get the latest secure version for iOS & Android APK.</p>
+              </div>
+              <div className="mt-4 flex items-center gap-1 font-black uppercase text-[10px] tracking-widest text-emerald-600 group-hover:translate-x-1 transition-transform">
+                Winbox Download &rarr;
+              </div>
+            </Link>
+          </div>
 
         </motion.div>
       </div>

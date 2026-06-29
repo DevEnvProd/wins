@@ -7,7 +7,7 @@ export const SEOContent = () => {
 
       <div className="text-center mb-16 space-y-4">
         <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-gold-outline">
-          Winbox 666 Official Platform Guide
+          Winbox Official Platform Guide
         </h2>
         <p className="text-gray-400 font-bold uppercase tracking-widest text-sm">Everything you need to know about Winbox Malaysia</p>
       </div>

@@ -71,7 +71,7 @@ export const Navbar = () => {
       "USDT Withdrawal"
     ],
     "Support & Info": [
-      "Help",
+      "FAQ / Help",
       "Terms and Conditions",
       "Privacy",
       "Contact Us",
@@ -89,7 +89,7 @@ export const Navbar = () => {
               <Link to="/" className="flex items-center gap-2">
                 <img 
                   src="https://illuminatelabs.space/asset/images/Winbox_MY_logo.avif" 
-                  alt="Winbox 666" 
+                  alt="Winbox" 
                   className="h-12 w-auto object-contain"
                   referrerPolicy="no-referrer"
                 />
@@ -339,7 +339,7 @@ export const Navbar = () => {
                 </AnimatePresence>
               </div>
 
-              {/* <a href="#" className="hover:text-sky-500 transition-colors">Download</a> */}
+              <Link to="/download" className="hover:text-sky-500 transition-colors">Download</Link>
               
               {/* About Dropdown */}
               <div 
@@ -384,6 +384,14 @@ export const Navbar = () => {
                                   </Link>
                                 ) : item === "Terms and Conditions" ? (
                                   <Link to="/terms" className="block text-gray-600 hover:text-sky-500 hover:translate-x-1 transition-all duration-200 text-[10px] font-bold">
+                                    {item}
+                                  </Link>
+                                ) : item === "FAQ / Help" ? (
+                                  <Link to="/faq" className="block text-gray-600 hover:text-sky-500 hover:translate-x-1 transition-all duration-200 text-[10px] font-bold">
+                                    {item}
+                                  </Link>
+                                ) : item === "Blog" ? (
+                                  <Link to="/blog" className="block text-gray-600 hover:text-sky-500 hover:translate-x-1 transition-all duration-200 text-[10px] font-bold">
                                     {item}
                                   </Link>
                                 ) : (
@@ -446,6 +454,13 @@ export const Navbar = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Home
+                </Link>
+                <Link 
+                  to="/download" 
+                  className="block text-sm font-black text-gray-600 hover:text-sky-500 uppercase tracking-widest py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Download
                 </Link>
                 <a 
                   href="#" 
@@ -603,6 +618,10 @@ export const Navbar = () => {
                                       <Link to="/partnership" onClick={() => setIsMobileMenuOpen(false)}>{item}</Link>
                                     ) : item === "Terms and Conditions" ? (
                                       <Link to="/terms" onClick={() => setIsMobileMenuOpen(false)}>{item}</Link>
+                                    ) : item === "FAQ / Help" ? (
+                                      <Link to="/faq" onClick={() => setIsMobileMenuOpen(false)}>{item}</Link>
+                                    ) : item === "Blog" ? (
+                                      <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)}>{item}</Link>
                                     ) : (
                                       <a href="#" onClick={() => setIsMobileMenuOpen(false)}>{item}</a>
                                     )}
