@@ -6,6 +6,10 @@ export const HeroSlider = () => {
   
   const slides = [
     {
+      image: "/slide23.png",
+      alt: "Winbox Hot Promotions and Latest Updates"
+    },
+    {
       image: "https://illuminatelabs.space/asset/images/HomeBanner_05.jpeg",
       alt: "Winbox Daily Live Lucky Draw"
     },
