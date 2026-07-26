@@ -99,7 +99,7 @@ export const Navbar = () => {
             {/* Desktop Nav */}
             <div className="hidden lg:flex items-center space-x-6 text-[10px] font-black text-gray-500 uppercase tracking-widest">
               <Link to="/" className="text-sky-500 border-b-2 border-sky-500 pb-1">Home</Link>
-              <a href="#" className="hover:text-sky-500 transition-colors">Promo</a>
+              <Link to="/promo" className="hover:text-sky-500 transition-colors">Promo</Link>
               
               {/* Slots Dropdown */}
               <div 
@@ -371,36 +371,43 @@ export const Navbar = () => {
                             {category}
                           </h3>
                           <ul className="space-y-2">
-                            {items.map((item, itemIdx) => (
-                              <motion.li 
-                                key={item}
-                                initial={{ opacity: 0, x: -10 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: idx * 0.1 + itemIdx * 0.05 }}
-                              >
-                                {item === "Winbox Partnership" ? (
-                                  <Link to="/partnership" className="block text-gray-600 hover:text-sky-500 hover:translate-x-1 transition-all duration-200 text-[10px] font-bold">
+                            {items.map((item, itemIdx) => {
+                              const getPath = (name: string) => {
+                                const map: Record<string, string> = {
+                                  "Winbox Partnership": "/partnership",
+                                  "Terms and Conditions": "/terms",
+                                  "FAQ / Help": "/faq",
+                                  "Blog": "/blog",
+                                  "Ambassador": "/ambassador",
+                                  "Brand Ambassador": "/brand-ambassador",
+                                  "Agent": "/agent",
+                                  "Referrer": "/referrer",
+                                  "Register Tutorial": "/tutorial/register",
+                                  "Top Up Methods": "/tutorial/top-up",
+                                  "Withdraw Tutorial": "/tutorial/withdraw",
+                                  "Ekor (Lottery) Tutorial": "/tutorial/ekor",
+                                  "Horse Racing Tutorial": "/tutorial/horse-racing",
+                                  "Real Name Authentication": "/tutorial/real-name-authentication",
+                                  "USDT Deposit": "/tutorial/usdt-deposit",
+                                  "USDT Withdrawal": "/tutorial/usdt-withdrawal",
+                                  "Privacy": "/privacy",
+                                  "Contact Us": "/contact"
+                                };
+                                return map[name] || "#";
+                              };
+                              return (
+                                <motion.li 
+                                  key={item}
+                                  initial={{ opacity: 0, x: -10 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ delay: idx * 0.1 + itemIdx * 0.05 }}
+                                >
+                                  <Link to={getPath(item)} className="block text-gray-600 hover:text-sky-500 hover:translate-x-1 transition-all duration-200 text-[10px] font-bold">
                                     {item}
                                   </Link>
-                                ) : item === "Terms and Conditions" ? (
-                                  <Link to="/terms" className="block text-gray-600 hover:text-sky-500 hover:translate-x-1 transition-all duration-200 text-[10px] font-bold">
-                                    {item}
-                                  </Link>
-                                ) : item === "FAQ / Help" ? (
-                                  <Link to="/faq" className="block text-gray-600 hover:text-sky-500 hover:translate-x-1 transition-all duration-200 text-[10px] font-bold">
-                                    {item}
-                                  </Link>
-                                ) : item === "Blog" ? (
-                                  <Link to="/blog" className="block text-gray-600 hover:text-sky-500 hover:translate-x-1 transition-all duration-200 text-[10px] font-bold">
-                                    {item}
-                                  </Link>
-                                ) : (
-                                  <a href="#" className="block text-gray-600 hover:text-sky-500 hover:translate-x-1 transition-all duration-200 text-[10px] font-bold">
-                                    {item}
-                                  </a>
-                                )}
-                              </motion.li>
-                            ))}
+                                </motion.li>
+                              );
+                            })}
                           </ul>
                         </div>
                       ))}
@@ -462,13 +469,13 @@ export const Navbar = () => {
                 >
                   Download
                 </Link>
-                <a 
-                  href="#" 
+                <Link 
+                  to="/promo" 
                   className="block text-sm font-black text-gray-600 hover:text-sky-500 uppercase tracking-widest py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Promo
-                </a>
+                </Link>
 
                 {/* Mobile Slots */}
                 <div>
@@ -612,21 +619,37 @@ export const Navbar = () => {
                             <div key={category}>
                               <h4 className="text-xs font-bold text-sky-500 mb-2">{category}</h4>
                               <div className="space-y-2 pl-2 border-l-2 border-gray-200">
-                                {items.map((item) => (
-                                  <div key={item} className="text-xs text-gray-600">
-                                    {item === "Winbox Partnership" ? (
-                                      <Link to="/partnership" onClick={() => setIsMobileMenuOpen(false)}>{item}</Link>
-                                    ) : item === "Terms and Conditions" ? (
-                                      <Link to="/terms" onClick={() => setIsMobileMenuOpen(false)}>{item}</Link>
-                                    ) : item === "FAQ / Help" ? (
-                                      <Link to="/faq" onClick={() => setIsMobileMenuOpen(false)}>{item}</Link>
-                                    ) : item === "Blog" ? (
-                                      <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)}>{item}</Link>
-                                    ) : (
-                                      <a href="#" onClick={() => setIsMobileMenuOpen(false)}>{item}</a>
-                                    )}
-                                  </div>
-                                ))}
+                                {items.map((item) => {
+                                  const getPath = (name: string) => {
+                                    const map: Record<string, string> = {
+                                      "Winbox Partnership": "/partnership",
+                                      "Terms and Conditions": "/terms",
+                                      "FAQ / Help": "/faq",
+                                      "Blog": "/blog",
+                                      "Ambassador": "/ambassador",
+                                      "Brand Ambassador": "/brand-ambassador",
+                                      "Agent": "/agent",
+                                      "Referrer": "/referrer",
+                                      "Register Tutorial": "/tutorial/register",
+                                      "Top Up Methods": "/tutorial/top-up",
+                                      "Withdraw Tutorial": "/tutorial/withdraw",
+                                      "Ekor (Lottery) Tutorial": "/tutorial/ekor",
+                                      "Horse Racing Tutorial": "/tutorial/horse-racing",
+                                      "Real Name Authentication": "/tutorial/real-name-authentication",
+                                      "USDT Deposit": "/tutorial/usdt-deposit",
+                                      "USDT Withdrawal": "/tutorial/usdt-withdrawal",
+                                      "Privacy": "/privacy",
+                                      "Contact Us": "/contact"
+                                    };
+                                    return map[name] || "#";
+                                  };
+                                  
+                                  return (
+                                    <div key={item} className="text-xs text-gray-600">
+                                      <Link to={getPath(item)} onClick={() => setIsMobileMenuOpen(false)}>{item}</Link>
+                                    </div>
+                                  );
+                                })}
                               </div>
                             </div>
                           ))}

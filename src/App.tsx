@@ -25,12 +25,13 @@ import { DownloadPage } from './components/DownloadPage';
 import { FAQPage } from './components/FAQPage';
 import { BlogPage } from './components/BlogPage';
 import { BlogPostPage } from './components/BlogPostPage';
-import { WorldCupBanner } from './components/WorldCupBanner';
+import { WorldCupWinnerBanner } from './components/WorldCupWinnerBanner';
+import { ContentPage } from './components/pages/ContentPage';
 
 const LandingPage = () => (
   <>
     <main>
-      <WorldCupBanner />
+      <WorldCupWinnerBanner />
       <HeroSlider />
       <div className="max-w-7xl mx-auto px-4 py-12 text-center">
         <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tighter text-gold-outline mb-6 leading-none">
@@ -70,6 +71,27 @@ export default function App() {
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
+          <Route path="/promo" element={<ContentPage pageSlug="promo" />} />
+          
+          {/* Partnership & Programs */}
+          <Route path="/ambassador" element={<ContentPage pageSlug="ambassador" />} />
+          <Route path="/brand-ambassador" element={<ContentPage pageSlug="brand-ambassador" />} />
+          <Route path="/agent" element={<ContentPage pageSlug="agent" />} />
+          <Route path="/referrer" element={<ContentPage pageSlug="referrer" />} />
+          
+          {/* Tutorials & Guides */}
+          <Route path="/tutorial/register" element={<ContentPage pageSlug="register-tutorial" />} />
+          <Route path="/tutorial/top-up" element={<ContentPage pageSlug="top-up-methods" />} />
+          <Route path="/tutorial/withdraw" element={<ContentPage pageSlug="withdraw-tutorial" />} />
+          <Route path="/tutorial/ekor" element={<ContentPage pageSlug="ekor-tutorial" />} />
+          <Route path="/tutorial/horse-racing" element={<ContentPage pageSlug="horse-racing-tutorial" />} />
+          <Route path="/tutorial/real-name-authentication" element={<ContentPage pageSlug="real-name-authentication" />} />
+          <Route path="/tutorial/usdt-deposit" element={<ContentPage pageSlug="usdt-deposit" />} />
+          <Route path="/tutorial/usdt-withdrawal" element={<ContentPage pageSlug="usdt-withdrawal" />} />
+          
+          {/* Support & Info */}
+          <Route path="/privacy" element={<ContentPage pageSlug="privacy" />} />
+          <Route path="/contact" element={<ContentPage pageSlug="contact" />} />
         </Routes>
         <FloatingElements />
       </div>

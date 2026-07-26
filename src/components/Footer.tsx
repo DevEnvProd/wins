@@ -169,6 +169,8 @@ export const Footer = () => {
             <Link to="/download" className="hover:opacity-100">Download</Link>
             <Link to="/faq" className="hover:opacity-100">FAQ</Link>
             <Link to="/terms" className="hover:opacity-100">Terms & Conditions</Link>
+            <Link to="/privacy" className="hover:opacity-100">Privacy Policy</Link>
+            <Link to="/contact" className="hover:opacity-100">Contact Us</Link>
           </div>
           <p className="text-xs opacity-40">
             © 2026 winbox666.online | All Rights Reserved | Winbox
